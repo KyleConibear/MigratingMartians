@@ -13,7 +13,9 @@ namespace KyleConibear
 
         public Vector2 GetInputDirection()
         {
-            return this.joystick.Direction;
+            Vector3 direction = this.joystick.Direction;
+            Log(this.isLogging, Type.Message, $"Input Direction: {direction}");
+            return direction;
         }
     }
 }

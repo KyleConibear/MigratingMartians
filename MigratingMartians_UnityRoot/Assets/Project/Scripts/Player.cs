@@ -4,17 +4,24 @@ using UnityEngine;
 
 namespace KyleConibear
 {
-    [RequireComponent(typeof(InputHandler))]
-    [RequireComponent(typeof(Movement2D))]
+    using static Logger;
+    [RequireComponent(typeof(InputHandler))]    
     public class Player : MonoBehaviour
     {
+        public bool isLogging = false;
+
         private InputHandler inputHandler = null;
-        private Movement2D movement2D = null;
+        [SerializeField] private Movement2D movement2D = null;
 
         private void Awake()
         {
             this.inputHandler = this.GetComponent<InputHandler>();
-            this.movement2D = this.GetComponent<Movement2D>();
+
+            if(this.movement2D == null)
+            {
+                Log(this.isLogging, Type.Warning, $"{this.name} does not have Movement2D assigned in the inspector.");
+                this.movement2D = this.GetComponentInChildren<Movement2D>();
+            }            
         }
 
         private void FixedUpdate()

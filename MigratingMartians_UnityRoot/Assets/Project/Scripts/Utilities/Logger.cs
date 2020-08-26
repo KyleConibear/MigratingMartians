@@ -17,7 +17,7 @@ namespace KyleConibear
 
         public static void Log(bool isLogging, Type messageType = Type.Message, string message = "Method has executed.", bool isSinglePrint = true)
         {
-            if (isLogging == false && messageType != Type.Error)
+            if (isLogging == false && messageType == Type.Message)
                 return;
 
             Log(messageType, message, isSinglePrint);
