@@ -88,9 +88,9 @@
         <key>maxTextureSize</key>
         <QSize>
             <key>width</key>
-            <int>2048</int>
+            <int>512</int>
             <key>height</key>
-            <int>2048</int>
+            <int>512</int>
         </QSize>
         <key>fixedTextureSize</key>
         <QSize>
@@ -132,7 +132,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../MigratingMartians_UnityRoot/Assets/Project/Images/Sprites/Tank-Lit_Sprites.tpsheet</filename>
+                <filename>../../MigratingMartians_UnityRoot/Assets/Project/Images/Sprites/Tanks.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -159,7 +159,7 @@
         <key>globalSpriteSettings</key>
         <struct type="SpriteSettings">
             <key>scale</key>
-            <double>1</double>
+            <double>0.3</double>
             <key>scaleMode</key>
             <enum type="ScaleMode">Smooth</enum>
             <key>extrude</key>
@@ -274,7 +274,7 @@
             <key type="filename">../../OriginalFiles/Images/Sprites/Tanks-Lit/Barrels/Tank_Barrel-1_lit.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
+                <point_f>0.114583,0.48855</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>

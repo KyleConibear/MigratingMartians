@@ -2,14 +2,11 @@ version: 2
 importPivots: 1
 tpsheetFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
-- Assets/Project/Images/Normals/Tank_Normals.tpsheet
-- Assets/Project/Images/Sprites/Tank_Sprites.tpsheet
+- Assets/Project/Images/Sprites/Tanks.tpsheet
 textureFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites.png
-- Assets/Project/Images/Normals/Tank_Normals.png
-- Assets/Project/Images/Sprites/Tank_Sprites.png
+- Assets/Project/Images/Sprites/Tanks.png
 normalmapFileNames:
 - Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
-- 
 - 
 enableDebugOutput: 0
