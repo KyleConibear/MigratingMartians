@@ -1,0 +1,667 @@
+fileFormatVersion: 2
+guid: 7a4c6eaa0f59cd244952250ba7b11fd8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5970819700179821210
+    second: Armour-Tank_Amour-1
+  - first:
+      213: 5744383907767598251
+    second: Armour-Tank_Amour-2
+  - first:
+      213: -198286650498491861
+    second: Armour-Tank_Amour-3
+  - first:
+      213: 2864044886392301512
+    second: Armour-Tank_Amour-4
+  - first:
+      213: 1935169731103279922
+    second: Armour-Tank_Amour-5
+  - first:
+      213: -7390712643973437092
+    second: Armour-Tank_Amour-6
+  - first:
+      213: 2168257173766155092
+    second: Barrels-Tank_Barrel-1
+  - first:
+      213: 8575639376775056048
+    second: Barrels-Tank_Barrel-2
+  - first:
+      213: -698799296480332804
+    second: Barrels-Tank_Barrel-3
+  - first:
+      213: -5161711678135970234
+    second: Barrels-Tank_Barrel-4
+  - first:
+      213: 431187939431791515
+    second: Barrels-Tank_Barrel-5
+  - first:
+      213: 1595041485660564678
+    second: Barrels-Tank_Barrel-6
+  - first:
+      213: -2053180344085305221
+    second: Treads-Tank_Tread-1
+  - first:
+      213: 1558341809062666202
+    second: Treads-Tank_Tread-2
+  - first:
+      213: -2383712496576643964
+    second: Treads-Tank_Tread-3
+  - first:
+      213: -5880371156617987353
+    second: Treads-Tank_Tread-4
+  - first:
+      213: -8298559893179788956
+    second: Treads-Tank_Tread-5
+  - first:
+      213: -468508539530064050
+    second: Treads-Tank_Tread-6
+  - first:
+      213: -8981251280500715125
+    second: Turret-Tank_Turret-1
+  - first:
+      213: 5063814975212817339
+    second: Turret-Tank_Turret-2
+  - first:
+      213: -7791031602027882386
+    second: Turret-Tank_Turret-3
+  - first:
+      213: 2223831696710171608
+    second: Turret-Tank_Turret-4
+  - first:
+      213: 8985052326947757423
+    second: Turret-Tank_Turret-5
+  - first:
+      213: -2514242268701162837
+    second: Turret-Tank_Turret-6
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1440
+        width: 604
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d90e01e13632da0800000000000000
+      internalID: -5970819700179821210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-2
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1846
+        width: 662
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac35f3aab628bf40800000000000000
+      internalID: 5744383907767598251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-3
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 1418
+        width: 582
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2ad559875b8f3df0800000000000000
+      internalID: -198286650498491861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-4
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1242
+        width: 507
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7ef2a56a12fb720800000000000000
+      internalID: 2864044886392301512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-5
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 1403
+        width: 575
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23bcf721e9a1bda10800000000000000
+      internalID: 1935169731103279922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Armour-Tank_Amour-6
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1282
+        width: 547
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59a9fa020aee6990800000000000000
+      internalID: -7390712643973437092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-1
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 957
+        width: 480
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b26006962371e10800000000000000
+      internalID: 2168257173766155092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-2
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 1089
+        width: 502
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba8786d39ac20770800000000000000
+      internalID: 8575639376775056048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-3
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1090
+        width: 481
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf33ff30ebd5d46f0800000000000000
+      internalID: -698799296480332804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-4
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 962
+        width: 475
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64658bf939aed58b0800000000000000
+      internalID: -5161711678135970234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-5
+      rect:
+        serializedVersion: 2
+        x: 1570
+        y: 952
+        width: 477
+        height: 172
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bb3497523ebf500800000000000000
+      internalID: 431187939431791515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Barrels-Tank_Barrel-6
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1072
+        width: 491
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc2fc2c7c9b22610800000000000000
+      internalID: 1595041485660564678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-1
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 1567
+        width: 594
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b782bf2fa53a183e0800000000000000
+      internalID: -2053180344085305221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-2
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 1799
+        width: 614
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adfd1df6e9750a510800000000000000
+      internalID: 1558341809062666202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-3
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 1610
+        width: 606
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48cb3e22d1a5beed0800000000000000
+      internalID: -2383712496576643964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-4
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1214
+        width: 580
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eaf45ea699b46ea0800000000000000
+      internalID: -5880371156617987353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1623
+        width: 620
+        height: 221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46117bbaeb795dc80800000000000000
+      internalID: -8298559893179788956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Treads-Tank_Tread-6
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 1820
+        width: 633
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4fc21f27f58f79f0800000000000000
+      internalID: -468508539530064050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 610
+        width: 407
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b819b3b8b8f2c5380800000000000000
+      internalID: -8981251280500715125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-2
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 769
+        width: 464
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb0dd504e8464640800000000000000
+      internalID: 5063814975212817339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 922
+        width: 467
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e68194f5902b0e390800000000000000
+      internalID: -7791031602027882386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-4
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1279
+        width: 402
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbf9a25523acde10800000000000000
+      internalID: 2223831696710171608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 788
+        width: 420
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6d940c8c7151bc70800000000000000
+      internalID: 8985052326947757423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret-Tank_Turret-6
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 1126
+        width: 306
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba28bc64afd9b1dd0800000000000000
+      internalID: -2514242268701162837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
