@@ -132,7 +132,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../../MigratingMartians_UnityRoot/Assets/Project/Images/Sprites/Tanks.tpsheet</filename>
+                <filename>../../MigratingMartians_UnityRoot/Assets/Project/Sprites/Tanks.tpsheet</filename>
             </struct>
         </map>
         <key>multiPack</key>
@@ -358,6 +358,21 @@
                 <rect>123,35,245,70</rect>
                 <key>scale9Paddings</key>
                 <rect>123,35,245,70</rect>
+                <key>scale9FromFile</key>
+                <false/>
+            </struct>
+            <key type="filename">../../OriginalFiles/Images/Sprites/Tanks-Lit/Reticle.png</key>
+            <struct type="IndividualSpriteSettings">
+                <key>pivotPoint</key>
+                <point_f>0.5,0.5</point_f>
+                <key>spriteScale</key>
+                <double>1</double>
+                <key>scale9Enabled</key>
+                <false/>
+                <key>scale9Borders</key>
+                <rect>32,32,64,64</rect>
+                <key>scale9Paddings</key>
+                <rect>32,32,64,64</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>

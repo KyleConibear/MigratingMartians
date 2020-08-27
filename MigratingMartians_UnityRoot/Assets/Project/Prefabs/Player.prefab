@@ -76,7 +76,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.22, y: 0.53}
+  m_Size: {x: 0.92, y: 0.45}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -92,6 +92,8 @@ GameObject:
   m_Component:
   - component: {fileID: 721417497}
   - component: {fileID: 721417498}
+  - component: {fileID: 1632896898189217061}
+  - component: {fileID: 3743171896450819273}
   m_Layer: 0
   m_Name: Barrel_Sprite
   m_TagString: Untagged
@@ -106,13 +108,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721417496}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.597, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1537684500}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!212 &721417498
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -164,6 +166,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &1632896898189217061
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721417496}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &3743171896450819273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721417496}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad99659fe2969345b3ecb5eaa146bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
 --- !u!1 &1014628309
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1537684500}
   - component: {fileID: 1918015200662548147}
+  - component: {fileID: 2342576815898408680}
   - component: {fileID: 598928496150368084}
   m_Layer: 0
   m_Name: Tank
@@ -295,7 +332,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLogging: 0
+  type: 0
   speed: 50
+  rigidbody2D: {fileID: 598928496150368084}
+--- !u!114 &2342576815898408680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537684499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bb4c3fad1bef64c87109d5dcda4167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds: {x: -8.75, y: 8.75, z: -5, w: -3}
+  debugLinesLife: Infinity
 --- !u!50 &598928496150368084
 Rigidbody2D:
   serializedVersion: 4
@@ -393,7 +446,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.78, y: 0.69}
+  m_Size: {x: 1.74, y: 0.67}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -429,7 +482,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1537684500}
-  - {fileID: 4903562453436877880}
+  - {fileID: 8325811952573623985}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,7 +499,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLogging: 0
-  movement2D: {fileID: 1918015200662548147}
+  driveMovement: {fileID: 1918015200662548147}
+  reticleMove: {fileID: 337785411}
+  barrelRotation: {fileID: 3743171896450819273}
 --- !u!114 &1590710749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,8 +515,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLogging: 1
-  joystick: {fileID: 0}
---- !u!1 &8897490159547020205
+  driveJoystick: {fileID: 0}
+  aimJoyStick: {fileID: 0}
+--- !u!1 &7470612363807774615
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -469,56 +525,109 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4903562453436877880}
-  - component: {fileID: 1569479281}
+  - component: {fileID: 8325811952573623985}
+  - component: {fileID: 6621436652753665673}
+  - component: {fileID: 337785411}
+  - component: {fileID: 1795755089984771788}
   m_Layer: 0
-  m_Name: Bounds_Collider
+  m_Name: Reticle_Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4903562453436877880
+--- !u!4 &8325811952573623985
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8897490159547020205}
+  m_GameObject: {fileID: 7470612363807774615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.78, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4940752167763023239}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &1569479281
-PolygonCollider2D:
+--- !u!212 &6621436652753665673
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8897490159547020205}
+  m_GameObject: {fileID: 7470612363807774615}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -8, y: 0}
-      - {x: 8, y: 0}
-      - {x: 8, y: 0.5}
-      - {x: 0, y: 2.5}
-      - {x: -8, y: 0.5}
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -55289395
+  m_SortingLayer: 1
+  m_SortingOrder: 2
+  m_Sprite: {fileID: -6776817779631042170, guid: 7cb335961c7e01c49bc61f0d4ca5b150,
+    type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.38, y: 0.38}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &337785411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470612363807774615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 565cc1110da2e9d459db688a21abe01a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLogging: 0
+  type: 1
+  speed: 10
+  rigidbody2D: {fileID: 0}
+--- !u!114 &1795755089984771788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7470612363807774615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9bb4c3fad1bef64c87109d5dcda4167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds: {x: Infinity, y: Infinity, z: Infinity, w: Infinity}
+  debugLinesLife: Infinity

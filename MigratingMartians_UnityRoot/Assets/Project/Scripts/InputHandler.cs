@@ -9,12 +9,19 @@ namespace KyleConibear
     {
         public bool isLogging = false;
 
-        [SerializeField] private Joystick joystick = null;
-
-        public Vector2 GetInputDirection()
+        [SerializeField] private Joystick driveJoystick = null;
+        [SerializeField] private Joystick aimJoyStick = null;
+        public Vector2 GetDriveInputDirection()
         {
-            Vector3 direction = this.joystick.Direction;
-            Log(this.isLogging, Type.Message, $"Input Direction: {direction}");
+            Vector3 direction = this.driveJoystick.Direction;
+            Log(this.isLogging, Type.Message, $"Input Drive Direction: {direction}");
+            return direction;
+        }
+
+        public Vector2 GetAimInputDirection()
+        {
+            Vector3 direction = this.aimJoyStick.Direction;
+            Log(this.isLogging, Type.Message, $"Input Aim Direction: {direction}");
             return direction;
         }
     }
