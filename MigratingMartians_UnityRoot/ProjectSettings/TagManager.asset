@@ -41,9 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1038758239
+    locked: 0
+  - name: Entity
+    uniqueID: 2689688451
+    locked: 0
   - name: Tank
     uniqueID: 4239677901
     locked: 0
   - name: UserInput
     uniqueID: 520126599
+    locked: 0
+  - name: HeadsUpDisplay
+    uniqueID: 1309305381
     locked: 0

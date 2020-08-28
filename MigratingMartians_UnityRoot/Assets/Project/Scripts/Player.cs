@@ -10,7 +10,7 @@ namespace KyleConibear
         public bool isLogging = false;
 
         [SerializeField] private InputHandler inputHandler = null;
-        [SerializeField] private Move2D driveMovement = null;
+        [SerializeField] private MovePhysics2D drive = null;
 
         [SerializeField] private Reticle reticle = null;
         
@@ -21,10 +21,9 @@ namespace KyleConibear
             this.reticle.Move(this.inputHandler.GetAimInputDirection());
             this.barrelRotation.LookAt(this.reticle.gameObject.transform.position);
         }
-
         private void FixedUpdate()
         {
-            this.driveMovement.Move(Move2D.Type.Physics, this.inputHandler.GetDriveInputDirection());            
-        }
+            this.drive.GlobalMove(this.inputHandler.GetDriveInputDirection());            
+        }      
     }
 }

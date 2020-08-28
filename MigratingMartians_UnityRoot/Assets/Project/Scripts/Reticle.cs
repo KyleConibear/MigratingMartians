@@ -24,7 +24,7 @@ namespace KyleConibear
         [SerializeField] private float lockedThreshold = 1.0f;
         [SerializeField] private State state = State.Searching;
 
-        [SerializeField] private Move2D move = null;
+        [SerializeField] private MoveTransform2D move = null;
 
         public UnityEvent OnLocked = new UnityEvent();
         public UnityEvent OnUnlocked = new UnityEvent();
@@ -64,11 +64,11 @@ namespace KyleConibear
         {
             if(this.state == State.Locking)
             {
-                this.move.Move(Move2D.Type.Transform, direction, this.lockingMoveSpeedMultplier);
+                this.move.Move(direction, this.lockingMoveSpeedMultplier);
             }
             else
             {
-                this.move.Move(Move2D.Type.Transform, direction);
+                this.move.Move(direction);
             }            
         }
 
