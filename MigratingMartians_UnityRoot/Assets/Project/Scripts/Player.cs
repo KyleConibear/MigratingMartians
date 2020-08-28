@@ -4,33 +4,27 @@ using UnityEngine;
 
 namespace KyleConibear
 {
-    using static Logger;
-    [RequireComponent(typeof(InputHandler))]    
+    using static Logger;   
     public class Player : MonoBehaviour
     {
         public bool isLogging = false;
 
-        private InputHandler inputHandler = null;
+        [SerializeField] private InputHandler inputHandler = null;
         [SerializeField] private Move2D driveMovement = null;
-        [SerializeField] private Move2D reticleMove = null;
-        [SerializeField] private LookAt2D barrelRotation = null;
 
-        private void Awake()
+        [SerializeField] private Reticle reticle = null;
+        
+        [SerializeField] private Rotate2D barrelRotation = null;
+
+        private void Update()
         {
-            this.inputHandler = this.GetComponent<InputHandler>();
-
-            if(this.driveMovement == null)
-            {
-                Log(this.isLogging, Type.Warning, $"{this.name} does not have Movement2D assigned in the inspector.");
-                this.driveMovement = this.GetComponentInChildren<Move2D>();
-            }            
+            this.reticle.Move(this.inputHandler.GetAimInputDirection());
+            this.barrelRotation.LookAt(this.reticle.gameObject.transform.position);
         }
 
         private void FixedUpdate()
         {
-            this.driveMovement.Move(this.inputHandler.GetDriveInputDirection());
-            this.reticleMove.Move(this.inputHandler.GetAimInputDirection());
-            this.barrelRotation.RotateTowards(this.reticleMove.gameObject.transform.position);
+            this.driveMovement.Move(Move2D.Type.Physics, this.inputHandler.GetDriveInputDirection());            
         }
     }
 }

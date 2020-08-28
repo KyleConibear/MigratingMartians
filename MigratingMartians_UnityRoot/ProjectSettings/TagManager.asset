@@ -44,3 +44,6 @@ TagManager:
   - name: Tank
     uniqueID: 4239677901
     locked: 0
+  - name: UserInput
+    uniqueID: 520126599
+    locked: 0

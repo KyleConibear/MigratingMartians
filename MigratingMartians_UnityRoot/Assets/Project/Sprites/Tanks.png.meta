@@ -216,7 +216,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 358
-        y: 225
+        y: 241
         width: 152
         height: 48
       alignment: 0
@@ -278,8 +278,8 @@ TextureImporter:
       name: Barrels-Tank_Barrel-1_lit
       rect:
         serializedVersion: 2
-        x: 142
-        y: 67
+        x: 143
+        y: 12
         width: 144
         height: 39
       alignment: 9
@@ -300,7 +300,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 357
-        y: 166
+        y: 182
         width: 151
         height: 57
       alignment: 0
@@ -341,8 +341,8 @@ TextureImporter:
       name: Barrels-Tank_Barrel-4_lit
       rect:
         serializedVersion: 2
-        x: 143
-        y: 27
+        x: 266
+        y: 99
         width: 143
         height: 38
       alignment: 0
@@ -363,7 +363,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 368
-        y: 275
+        y: 291
         width: 143
         height: 52
       alignment: 0
@@ -405,9 +405,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 394
-        y: 426
-        width: 38
-        height: 38
+        y: 387
+        width: 77
+        height: 77
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -551,8 +551,8 @@ TextureImporter:
       name: Turrets-Tank_Turret-1_lit
       rect:
         serializedVersion: 2
-        x: 375
-        y: 329
+        x: 142
+        y: 53
         width: 122
         height: 53
       alignment: 0
@@ -615,7 +615,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 316
-        y: 127
+        y: 143
         width: 121
         height: 37
       alignment: 0
@@ -636,7 +636,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 375
-        y: 384
+        y: 345
         width: 126
         height: 40
       alignment: 0

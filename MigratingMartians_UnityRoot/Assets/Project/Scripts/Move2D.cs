@@ -10,7 +10,6 @@ namespace KyleConibear
     {
         public bool isLogging = false;
 
-        [SerializeField] private Type type = Type.Physics;
         public enum Type
         {
             Physics,
@@ -23,19 +22,19 @@ namespace KyleConibear
         [Header("Optional. Only required for type Physics")]
         [SerializeField] private new Rigidbody2D rigidbody2D = null;
 
-        public void Move(Vector2 direction)
+        public void Move(Type type, Vector2 direction, float speedMultiplier = 1.0f)
         {
             Log(this.isLogging, Logger.Type.Message, $"Movement Direction: {direction}");
 
-            switch (this.type)
+            switch (type)
             {
                 case Type.Transform:
-                Vector3 targetPosition = this.transform.position + ((Vector3)(direction * speed * Time.deltaTime));
+                Vector3 targetPosition = this.transform.position + ((Vector3)(direction * (speed * speedMultiplier) * Time.deltaTime));
                 this.transform.position = targetPosition;
                 break;
 
                 default:
-                this.rigidbody2D.velocity = direction * speed * Time.deltaTime;
+                this.rigidbody2D.velocity = direction * (speed * speedMultiplier) * Time.deltaTime;
                 break;
             }
         }
