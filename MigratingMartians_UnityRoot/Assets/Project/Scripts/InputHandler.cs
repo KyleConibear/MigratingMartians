@@ -24,6 +24,9 @@ namespace KyleConibear
 
         public Vector2 GetDriveInputDirection()
         {
+            if (this.driveJoystick.gameObject.activeInHierarchy == false)
+                return Vector2.zero;
+
             Vector3 direction = this.driveJoystick.Direction;
             Log(this.isLogging, Type.Message, $"Input Drive Direction: {direction}");
             return direction;
@@ -31,6 +34,9 @@ namespace KyleConibear
 
         public Vector2 GetAimInputDirection()
         {
+            if (this.aimJoyStick.gameObject.activeInHierarchy == false)
+                return Vector2.zero;
+
             Vector3 direction = this.aimJoyStick.Direction;
             Log(this.isLogging, Type.Message, $"Input Aim Direction: {direction}");
             return direction;

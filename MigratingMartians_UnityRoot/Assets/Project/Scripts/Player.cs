@@ -12,18 +12,12 @@ namespace KyleConibear
         [SerializeField] private InputHandler inputHandler = null;
         [SerializeField] private MovePhysics2D drive = null;
 
-        [SerializeField] private Reticle reticle = null;
+        [SerializeField] private Weapon weapon = null;
         
-        [SerializeField] private Rotate2D barrelRotation = null;
-
-        private void Update()
-        {
-            this.reticle.Move(this.inputHandler.GetAimInputDirection());
-            this.barrelRotation.LookAt(this.reticle.gameObject.transform.position);
-        }
         private void FixedUpdate()
         {
-            this.drive.GlobalMove(this.inputHandler.GetDriveInputDirection());            
+            this.drive.GlobalMove(this.inputHandler.GetDriveInputDirection());
+            this.weapon.Aim(this.inputHandler.GetAimInputDirection());
         }      
     }
 }

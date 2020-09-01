@@ -2,40 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-public class MovePhysics2D : MonoBehaviour
+namespace KyleConibear
 {
-    [Range(1,100)]
-    [SerializeField] private float velocity = 50.0f;
+    using static Logger;
 
-    private new Rigidbody2D rigidbody2D = null;
-
-    private void Awake()
+    [RequireComponent(typeof(Rigidbody2D))]
+    public class MovePhysics2D : MonoBehaviour
     {
-        this.rigidbody2D = this.GetComponent<Rigidbody2D>();
-    }
+        public bool isLogging = false;
 
-    public void GlobalMove(Vector2 direction, float velocityMultiplier = 1.0f)
-    {
-        this.rigidbody2D.velocity = direction * (velocity * velocityMultiplier) * Time.deltaTime;
-    }
+        [Range(1, 500)]
+        [SerializeField] private float velocity = 50.0f;
 
-    public void AddForce(Vector2 direction, float velocityMultiplier = 1.0f)
-    {
-        direction *= this.velocity * velocityMultiplier;
+        private new Rigidbody2D rigidbody2D = null;
 
-        this.rigidbody2D.AddForce(direction);
-    }
+        private void Awake()
+        {
+            this.rigidbody2D = this.GetComponent<Rigidbody2D>();
+        }
 
-    public void AddRelativeForce(Vector2 direction, float velocityMultiplier = 1.0f)
-    {
-        direction *= this.velocity * velocityMultiplier;
+        public void GlobalMove(Vector2 direction, float velocityMultiplier = 1.0f)
+        {
+            this.rigidbody2D.velocity = direction * (velocity * velocityMultiplier) * Time.fixedDeltaTime;
+        }
 
-        this.rigidbody2D.AddRelativeForce(direction);
-    }
+        public void AddForce(Vector2 direction, float velocityMultiplier = 1.0f)
+        {
+            direction *= this.velocity * velocityMultiplier;
 
-    public void ResetVelocity()
-    {
-        this.rigidbody2D.velocity = Vector2.zero;
+            this.rigidbody2D.AddForce(direction);
+        }
+
+        public void AddRelativeForce(Vector2 direction, float velocityMultiplier = 1.0f)
+        {
+            direction *= this.velocity * velocityMultiplier;
+
+            this.rigidbody2D.AddRelativeForce(direction);
+        }
+
+        public void ResetVelocity()
+        {
+            this.rigidbody2D.velocity = Vector2.zero;
+        }
+
+        public void SetIsKinematic(bool enabled)
+        {
+            this.rigidbody2D.isKinematic = enabled;
+        }
     }
 }

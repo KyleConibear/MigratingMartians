@@ -19,12 +19,12 @@ namespace KyleConibear
         [SerializeField] private Target target = null;
         [SerializeField] private float lockingTime = 0.0f;
         [SerializeField] private float lockingMoveSpeedMultplier = 0.6f;
-
+        [SerializeField] private float lockedDistance = 0.1f;
         [Tooltip("Duration of locking time before target becomes locked.")]
         [SerializeField] private float lockedThreshold = 1.0f;
         [SerializeField] private State state = State.Searching;
 
-        [SerializeField] private MoveTransform2D move = null;
+        [SerializeField] private MovePhysics2D move = null;
 
         public UnityEvent OnLocked = new UnityEvent();
         public UnityEvent OnUnlocked = new UnityEvent();
@@ -41,35 +41,59 @@ namespace KyleConibear
             this.reticleSprite = this.GetComponent<SpriteRenderer>();
         }
 
-        public void Update()
+        private void FixedUpdate()
+        {
+            if (state == State.Locked)
+            {
+                if(Vector2.Distance(this.transform.position, this.target.transform.position) > this.lockedDistance)
+                {
+                    this.FollowLockedTarget();
+                }
+                else
+                {
+                    this.move.ResetVelocity();
+                }                     
+            }
+           
+        }
+
+        private void LateUpdate()
         {
             switch (state)
             {
                 case State.Searching:
                 this.SearchForTargets();
                 break;
-
-                case State.Locked:
-                this.transform.position = this.target.transform.position;
-                break;
             }
         }
+
+        private void FollowLockedTarget()
+        {
+            Vector2 direction = this.target.transform.position - this.transform.position;
+            this.move.GlobalMove(direction.normalized);
+        }
+
         private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(this.transform.position, this.reticleRadius);
         }
 
-        public void Move(Vector2 direction)
+        public void PlayerMove(Vector2 inputDirection)
         {
-            if(this.state == State.Locking)
+            if (inputDirection == Vector2.zero || this.state == State.Locked)
+                return;
+
+            switch (this.state)
             {
-                this.move.Move(direction, this.lockingMoveSpeedMultplier);
+                case State.Searching:
+                this.move.GlobalMove(inputDirection);
+                break;
+
+                case State.Locking:
+                this.move.GlobalMove(inputDirection, this.lockingMoveSpeedMultplier);
+                break;
             }
-            else
-            {
-                this.move.Move(direction);
-            }            
         }
 
         public void UnlockTarget()
@@ -107,9 +131,10 @@ namespace KyleConibear
                 StartCoroutine(this.Locking());
                 break;
 
-                case State.Locked:                
+                case State.Locked:
                 this.reticleSprite.color = Color.green;
                 this.lockingTime = 0.0f;
+                this.move.ResetVelocity();
                 this.OnLocked.Invoke();
                 break;
             }
@@ -121,7 +146,7 @@ namespace KyleConibear
             this.lockingTime += 0.1f;
 
             // Lock acquired
-            if(this.lockingTime >= this.lockedThreshold)
+            if (this.lockingTime >= this.lockedThreshold)
             {
                 this.SetState(State.Locked);
                 yield break;
@@ -133,6 +158,7 @@ namespace KyleConibear
             if (this.IsOverlapingTarget(out target))
             {
                 StartCoroutine(this.Locking());
+                yield break;
             }
             else
             {

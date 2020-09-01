@@ -10,15 +10,16 @@ namespace KyleConibear
     {
         public bool isLogging = false;
 
-        [Range(1, 100)]
-        [SerializeField] private float speed = 50.0f;
+        Transform target;
+        float smoothTime = 0.3f;
+        float yVelocity = 0.0f;
 
         public void Move(Vector2 direction, float speedMultiplier = 1.0f)
         {
             Log(this.isLogging, Logger.Type.Message, $"Movement Direction: {direction}");
 
-            Vector3 targetPosition = this.transform.position + ((Vector3)(direction * (speed * speedMultiplier) * Time.deltaTime));
-            this.transform.position = targetPosition;
+            float newPosition = Mathf.SmoothDamp(transform.position.y, target.position.y, ref yVelocity, smoothTime);
+            transform.position = new Vector3(transform.position.x, newPosition, transform.position.z);
         }
     }
 }

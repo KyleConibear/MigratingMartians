@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -55,4 +56,7 @@ TagManager:
     locked: 0
   - name: HeadsUpDisplay
     uniqueID: 1309305381
+    locked: 0
+  - name: VisualEffects
+    uniqueID: 1338620245
     locked: 0
