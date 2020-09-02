@@ -8,7 +8,9 @@ namespace KyleConibear
     using static Logger;
     [RequireComponent(typeof(MovePhysics2D))]
     public class Projectile : MonoBehaviour
-    {        
+    {
+        [SerializeField] private uint _damage = 1;
+        public uint damage => this._damage;
         [SerializeField] private GameObject hitParticle = null;
         [SerializeField] private float hitVFXLife = 1.0f;
 
@@ -42,7 +44,7 @@ namespace KyleConibear
         {
             if (this.hasCollided == false && collision.gameObject.GetComponent<Projectile>() == false)
             {
-                this.hasCollided = true;
+                this.hasCollided = true;               
 
                 this.physics.SetIsKinematic(true);
                 this.physics.ResetVelocity();

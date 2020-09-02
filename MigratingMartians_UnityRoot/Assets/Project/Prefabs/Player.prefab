@@ -1037,8 +1037,8 @@ MonoBehaviour:
   reticleRadius: 0.5
   layerMask:
     serializedVersion: 2
-    m_Bits: 1
-  target: {fileID: 0}
+    m_Bits: 257
+  martian: {fileID: 0}
   lockingTime: 0
   lockingMoveSpeedMultplier: 0.6
   lockedDistance: 1

@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - Enemy
+  - EnemyBullet
+  - Explosion
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Martian
   - 
   - 
   - 

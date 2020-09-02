@@ -16,7 +16,7 @@ namespace KyleConibear
 
         [SerializeField] private float reticleRadius = 1.0f;
         [SerializeField] private LayerMask layerMask;
-        [SerializeField] private Target target = null;
+        [SerializeField] private Martian martian = null;
         [SerializeField] private float lockingTime = 0.0f;
         [SerializeField] private float lockingMoveSpeedMultplier = 0.6f;
         [SerializeField] private float lockedDistance = 0.1f;
@@ -45,16 +45,16 @@ namespace KyleConibear
         {
             if (state == State.Locked)
             {
-                if(Vector2.Distance(this.transform.position, this.target.transform.position) > this.lockedDistance)
+                if (Vector2.Distance(this.transform.position, this.martian.transform.position) > this.lockedDistance)
                 {
                     this.FollowLockedTarget();
                 }
                 else
                 {
                     this.move.ResetVelocity();
-                }                     
+                }
             }
-           
+
         }
 
         private void LateUpdate()
@@ -62,14 +62,14 @@ namespace KyleConibear
             switch (state)
             {
                 case State.Searching:
-                this.SearchForTargets();
+                this.SearchForEnemy();
                 break;
             }
         }
 
         private void FollowLockedTarget()
         {
-            Vector2 direction = this.target.transform.position - this.transform.position;
+            Vector2 direction = this.martian.transform.position - this.transform.position;
             this.move.GlobalMove(direction.normalized);
         }
 
@@ -102,12 +102,12 @@ namespace KyleConibear
             this.SetState(State.Searching);
         }
 
-        private void SearchForTargets()
+        private void SearchForEnemy()
         {
-            Target target;
-            if (this.IsOverlapingTarget(out target))
+            Martian martian;
+            if (this.IsOverlapingTarget(out martian))
             {
-                this.target = target;
+                this.martian = martian;
                 this.SetState(State.Locking);
             }
         }
@@ -154,8 +154,8 @@ namespace KyleConibear
 
             this.reticleSprite.enabled = !this.reticleSprite.isVisible;
 
-            Target target;
-            if (this.IsOverlapingTarget(out target))
+            Martian martian;
+            if (this.IsOverlapingTarget(out martian))
             {
                 StartCoroutine(this.Locking());
                 yield break;
@@ -167,19 +167,18 @@ namespace KyleConibear
             }
         }
 
-        private bool IsOverlapingTarget(out Target target)
+        private bool IsOverlapingTarget(out Martian martian)
         {
-            target = null;
+            martian = null;
             // Find all of the colliders on this layerMask overlaping our Reticle
             Collider2D[] hitColliders = Physics2D.OverlapCircleAll(this.transform.position, this.reticleRadius, this.layerMask);
 
             for (int i = 0; i < hitColliders.Length; i++)
             {
-                Target tempTarget;
-                hitColliders[i].TryGetComponent<Target>(out tempTarget);
-                if (tempTarget != null)
+                Martian tempMartian = hitColliders[i].GetComponentInParent<Martian>();
+                if (tempMartian != null)
                 {
-                    target = tempTarget;
+                    martian = tempMartian;
                     return true;
                 }
             }
