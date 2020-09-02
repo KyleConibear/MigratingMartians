@@ -18,7 +18,7 @@ namespace KyleConibear
     using static Logger;
     public static class GameManager
     {
-        private const string levelName = "Game_Scene";
+        private const string levelName = "Game";
 
         /// <summary>
         /// Once the level has loaded the LevelManager will invoke an Action that the level loading is complete

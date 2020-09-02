@@ -197,6 +197,7 @@
                 <false/>
             </struct>
             <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face-1.png</key>
+            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Pupil-1.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -212,6 +213,7 @@
                 <false/>
             </struct>
             <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face-2.png</key>
+            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Pupil-2.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -227,6 +229,7 @@
                 <false/>
             </struct>
             <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face-3.png</key>
+            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Pupil-3.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -238,51 +241,6 @@
                 <rect>57,45,115,90</rect>
                 <key>scale9Paddings</key>
                 <rect>57,45,115,90</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face_Background-1.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>73,63,147,125</rect>
-                <key>scale9Paddings</key>
-                <rect>73,63,147,125</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face_Background-2.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>73,56,147,111</rect>
-                <key>scale9Paddings</key>
-                <rect>73,56,147,111</rect>
-                <key>scale9FromFile</key>
-                <false/>
-            </struct>
-            <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Face_Background-3.png</key>
-            <struct type="IndividualSpriteSettings">
-                <key>pivotPoint</key>
-                <point_f>0.5,0.5</point_f>
-                <key>spriteScale</key>
-                <double>1</double>
-                <key>scale9Enabled</key>
-                <false/>
-                <key>scale9Borders</key>
-                <rect>64,59,129,118</rect>
-                <key>scale9Paddings</key>
-                <rect>64,59,129,118</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
@@ -304,7 +262,7 @@
             <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Pupil.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.5,-0.5</point_f>
+                <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>
@@ -334,7 +292,7 @@
             <key type="filename">../../OriginalFiles/Images/Sprites/Martians/Martian_Tooth.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
-                <point_f>0.75,-0.6</point_f>
+                <point_f>0.75,-0.7</point_f>
                 <key>spriteScale</key>
                 <double>1</double>
                 <key>scale9Enabled</key>

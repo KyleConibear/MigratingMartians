@@ -9194,7 +9194,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8297536144415693455}
   - component: {fileID: 5033597216620050748}
-  - component: {fileID: 4420498125266359492}
+  - component: {fileID: 6795214697938557850}
+  - component: {fileID: 9194262641419595880}
   m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
@@ -9272,7 +9273,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &4420498125266359492
+--- !u!95 &6795214697938557850
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170183276714119728}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5538cb2a92ff9a144a180182c2f082cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!58 &9194262641419595880
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9665,6 +9685,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa208788a5fc74596c1833b4dd88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLogging: 0
+  animator: {fileID: 6795214697938557850}
+  collider: {fileID: 9194262641419595880}
   rewardPoints: 0
 --- !u!114 &885098066762558190
 MonoBehaviour:
@@ -9698,7 +9721,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 100
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
