@@ -41,6 +41,7 @@ namespace KyleConibear
             }
         }
 
+
         private void Hit(uint damage, float collisionX)
         {
             Log(this.isLogging, Type.Message, $"{damage} damage taken.");
@@ -60,7 +61,6 @@ namespace KyleConibear
                 this.animator.SetTrigger("onHitRight");
             }            
         }
-
         private void Killed()
         {
             On_MartianKilled.Invoke(this);

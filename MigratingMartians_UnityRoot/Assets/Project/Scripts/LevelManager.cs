@@ -11,6 +11,7 @@ namespace KyleConibear
     {
         #region Fields
         [Header("General")]
+        public bool isLogging = false;
         [SerializeField] private LevelUI levelUI = null;
         public LevelUI LevelUI
         {
@@ -35,8 +36,6 @@ namespace KyleConibear
         }
 
         [SerializeField] private Player player = null;
-
-        [Header("Level Progression")]
         #endregion
 
         public static Action<string, LevelManager> On_LevelLoaded;
@@ -52,6 +51,5 @@ namespace KyleConibear
                 Logger.Log(Type.Warning, $"On_LevelLoaded Action is null.");
             }
         }
-
     }
 }

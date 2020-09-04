@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f53ed5c75fa22e4ab8dd855a41c6378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLogging: 1
+  isLogging: 0
   reticleRadius: 0.5
   layerMask:
     serializedVersion: 2
@@ -1099,7 +1099,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounds: {x: Infinity, y: Infinity, z: Infinity, w: Infinity}
-  debugLinesLife: Infinity
+  debugLineLife: 0
+  debugLineColour: {r: 0, g: 1, b: 1, a: 1}
 --- !u!1 &8836619106481674695
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,9 +1544,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8836619107035094641}
+  - component: {fileID: 8836619107035094642}
+  - component: {fileID: 2838078732179628954}
   - component: {fileID: 8836619107035094646}
   - component: {fileID: 8836619107035094640}
-  - component: {fileID: 8836619107035094642}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Untagged
@@ -1571,6 +1573,37 @@ Transform:
   m_Father: {fileID: 8836619105783960714}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8836619107035094642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836619107035094643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174a9c2c59de03048b4c500da261585c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLogging: 0
+  projectilePool: {fileID: 8836619106139784017}
+  reticle: {fileID: 8836619106374877581}
+  barrelRotation: {fileID: 8836619105704432087}
+--- !u!114 &2838078732179628954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836619107035094643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21097c58cc3cbea4790091d84038caff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds: {x: -8, y: 8, z: -3, w: -4.5}
+  debugLineLife: 0
+  debugLineColour: {r: 1, g: 0.42769682, b: 0, a: 1}
 --- !u!114 &8836619107035094646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,22 +1639,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8836619107035094642
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8836619107035094643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 174a9c2c59de03048b4c500da261585c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLogging: 0
-  projectilePool: {fileID: 8836619106139784017}
-  reticle: {fileID: 8836619106374877581}
-  barrelRotation: {fileID: 8836619105704432087}
 --- !u!1 &8836619107060335701
 GameObject:
   m_ObjectHideFlags: 0

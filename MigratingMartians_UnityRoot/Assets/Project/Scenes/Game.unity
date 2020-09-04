@@ -425,6 +425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13bb992cc8cd674fb68fd44fa5a2920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isLogging: 0
   levelUI: {fileID: 0}
   player: {fileID: 1915498938}
 --- !u!114 &1915498938 stripped
@@ -506,10 +507,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7241322027806944928, guid: 979ae86a93ef5fb44b45175347086acf,
+    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
+      propertyPath: bounds.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
+        type: 3}
+      propertyPath: bounds.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
+        type: 3}
+      propertyPath: bounds.w
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
+        type: 3}
+      propertyPath: bounds.z
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 979ae86a93ef5fb44b45175347086acf, type: 3}
@@ -579,11 +595,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8836619106374877581, guid: c23661e2d7f1f5448b8192ba314a107f,
-        type: 3}
-      propertyPath: isLogging
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8836619107378037453, guid: c23661e2d7f1f5448b8192ba314a107f,
         type: 3}
