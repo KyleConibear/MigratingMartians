@@ -13,19 +13,19 @@ namespace KyleConibear
 
         [Header("Default: Screen size.")]
         [Tooltip("x:left y:right z:top w:bottom")]
-        [SerializeField] private Vector4 bounds = Vector4.positiveInfinity;       
-
+        [SerializeField] private Vector4 _bounds = Vector4.positiveInfinity;
+        public Vector4 bounds => this._bounds;
         private void Start()
         {
-            if (this.bounds.x == Mathf.Infinity)
+            if (this._bounds.x == Mathf.Infinity)
             {
                 Vector2 screenBounds = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, Screen.height));
 
-                this.bounds = new Vector4(-screenBounds.x, screenBounds.x, screenBounds.y, -screenBounds.y);
-                Log(this.isLogging, Type.Message, $"bounds set to screen size. {bounds}");
+                this._bounds = new Vector4(-screenBounds.x, screenBounds.x, screenBounds.y, -screenBounds.y);
+                Log(this.isLogging, Type.Message, $"bounds set to screen size. {_bounds}");
             }
             
-            bounds.DrawBounds(this.debugLineColour, this.debugLineLife);
+            _bounds.DrawBounds(this.debugLineColour, this.debugLineLife);
         }
 
         private void LateUpdate()
@@ -36,8 +36,8 @@ namespace KyleConibear
         private void Clamp()
         {
             Vector2 clampedPosition = this.transform.position;
-            clampedPosition.x = Mathf.Clamp(clampedPosition.x, this.bounds.x, this.bounds.y);
-            clampedPosition.y = Mathf.Clamp(clampedPosition.y, this.bounds.w, this.bounds.z);
+            clampedPosition.x = Mathf.Clamp(clampedPosition.x, this._bounds.x, this._bounds.y);
+            clampedPosition.y = Mathf.Clamp(clampedPosition.y, this._bounds.w, this._bounds.z);
             this.transform.position = clampedPosition;
         }
     }

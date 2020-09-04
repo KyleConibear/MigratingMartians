@@ -15,6 +15,14 @@ namespace KyleConibear
             Error = 2
         }
 
+        public static void Log(bool isLogging, string GameObjectName = "", Type messageType = Type.Message, string message = "Method has executed.", bool isSinglePrint = true)
+        {
+            if (isLogging == false && messageType == Type.Message)
+                return;
+
+            Log(messageType, GameObjectName + ": " + message, isSinglePrint);
+        }
+
         public static void Log(bool isLogging, Type messageType = Type.Message, string message = "Method has executed.", bool isSinglePrint = true)
         {
             if (isLogging == false && messageType == Type.Message)

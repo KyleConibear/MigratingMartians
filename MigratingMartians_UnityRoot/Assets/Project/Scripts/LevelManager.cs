@@ -15,7 +15,7 @@ namespace KyleConibear
         public Color debugLineColour = Color.cyan;
         public float debugLineLife = 3.0f;
 
-        [Header("General")]        
+        [Header("General")]
         [SerializeField] private LevelUI levelUI = null;
         public LevelUI LevelUI
         {
@@ -40,6 +40,10 @@ namespace KyleConibear
         }
 
         [SerializeField] private Player player = null;
+
+        [SerializeField] private Transform martianContainer = null;
+        [SerializeField] private Martian martianPrefab = null;
+
         #endregion
 
         public static Action<string, LevelManager> On_LevelLoaded;
@@ -61,14 +65,18 @@ namespace KyleConibear
         private void Start()
         {
             this.martianSpawnArea.DrawBounds(this.debugLineColour, this.debugLineLife);
+            this.SpawnMartian();
+        }
+
+        private void SpawnMartian()
+        {
+            Martian martian = Instantiate<Martian>(this.martianPrefab, this.GetRandomSpawnPosition(), Quaternion.identity);
+            martian.transform.SetParent(this.martianContainer);
         }
 
         private Vector2 GetRandomSpawnPosition()
         {
-            float x = UnityEngine.Random.Range(martianSpawnArea.x, martianSpawnArea.y);
-            float y = UnityEngine.Random.Range(martianSpawnArea.z, martianSpawnArea.w);
-
-            return new Vector2(x, y);
+            return martianSpawnArea.GetRandomPositionWithBounds();
         }
     }
 }

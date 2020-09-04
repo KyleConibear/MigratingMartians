@@ -9284,7 +9284,7 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5538cb2a92ff9a144a180182c2f082cf, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -9649,9 +9649,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7241322027806944928}
   - component: {fileID: 3621675583217918648}
+  - component: {fileID: 7129069371558472053}
+  - component: {fileID: 6055849163368718922}
   - component: {fileID: 885098066762558190}
-  - component: {fileID: 9139630030704839119}
-  - component: {fileID: 6769308490643810952}
+  - component: {fileID: 4185629650927357798}
   m_Layer: 8
   m_Name: Martian
   m_TagString: Untagged
@@ -9686,9 +9687,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23fa208788a5fc74596c1833b4dd88c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLogging: 0
+  isLogging: 1
   animator: {fileID: 6795214697938557850}
   rewardPoints: 0
+  nextPosition: {x: 0, y: 0}
+  stopDistance: 2
+--- !u!114 &7129069371558472053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238965325113651598}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21097c58cc3cbea4790091d84038caff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLogging: 0
+  debugLineColour: {r: 0, g: 1, b: 1, a: 1}
+  debugLineLife: 3
+  _bounds: {x: -8, y: 8, z: 4, w: -1}
+--- !u!114 &6055849163368718922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7238965325113651598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505d28bc9179cf9459d782b2beba8a36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLogging: 0
+  maxVelocity: 50
+  velocity: 50
+  force: 100
+  rigidbody2D: {fileID: 4185629650927357798}
 --- !u!114 &885098066762558190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9709,23 +9745,7 @@ MonoBehaviour:
   OnFull:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &9139630030704839119
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7238965325113651598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21097c58cc3cbea4790091d84038caff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isLogging: 0
-  debugLineColour: {r: 1, g: 0, b: 0, a: 1}
-  debugLineLife: 0
-  bounds: {x: -8, y: 8, z: 4, w: -2}
---- !u!50 &6769308490643810952
+--- !u!50 &4185629650927357798
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -9745,7 +9765,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &7239037221976986176
 GameObject:
   m_ObjectHideFlags: 0
