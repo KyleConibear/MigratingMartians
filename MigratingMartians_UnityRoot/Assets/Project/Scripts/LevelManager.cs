@@ -10,8 +10,12 @@ namespace KyleConibear
     public sealed class LevelManager : MonoBehaviour
     {
         #region Fields
-        [Header("General")]
+        [Header("Debugging")]
         public bool isLogging = false;
+        public Color debugLineColour = Color.cyan;
+        public float debugLineLife = 3.0f;
+
+        [Header("General")]        
         [SerializeField] private LevelUI levelUI = null;
         public LevelUI LevelUI
         {
@@ -40,6 +44,8 @@ namespace KyleConibear
 
         public static Action<string, LevelManager> On_LevelLoaded;
 
+        [SerializeField] private Vector4 martianSpawnArea = Vector4.zero;
+
         private void Awake()
         {
             if (On_LevelLoaded != null)
@@ -50,6 +56,19 @@ namespace KyleConibear
             {
                 Logger.Log(Type.Warning, $"On_LevelLoaded Action is null.");
             }
+        }
+
+        private void Start()
+        {
+            this.martianSpawnArea.DrawBounds(this.debugLineColour, this.debugLineLife);
+        }
+
+        private Vector2 GetRandomSpawnPosition()
+        {
+            float x = UnityEngine.Random.Range(martianSpawnArea.x, martianSpawnArea.y);
+            float y = UnityEngine.Random.Range(martianSpawnArea.z, martianSpawnArea.w);
+
+            return new Vector2(x, y);
         }
     }
 }

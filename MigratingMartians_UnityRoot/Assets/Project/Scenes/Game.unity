@@ -426,8 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLogging: 0
+  debugLineColour: {r: 1, g: 0, b: 1, a: 1}
+  debugLineLife: 3
   levelUI: {fileID: 0}
   player: {fileID: 1915498938}
+  martianSpawnArea: {x: -8, y: 8, z: 6, w: 9}
 --- !u!114 &1915498938 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8836619105783960715, guid: c23661e2d7f1f5448b8192ba314a107f,
@@ -506,26 +509,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
-        type: 3}
-      propertyPath: bounds.x
-      value: -8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
-        type: 3}
-      propertyPath: bounds.y
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
-        type: 3}
-      propertyPath: bounds.w
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9139630030704839119, guid: 979ae86a93ef5fb44b45175347086acf,
-        type: 3}
-      propertyPath: bounds.z
-      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 979ae86a93ef5fb44b45175347086acf, type: 3}

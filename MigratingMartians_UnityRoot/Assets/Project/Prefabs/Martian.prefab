@@ -9721,9 +9721,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21097c58cc3cbea4790091d84038caff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounds: {x: -8, y: 8, z: 4, w: -2}
-  debugLineLife: 30
+  isLogging: 0
   debugLineColour: {r: 1, g: 0, b: 0, a: 1}
+  debugLineLife: 0
+  bounds: {x: -8, y: 8, z: 4, w: -2}
 --- !u!50 &6769308490643810952
 Rigidbody2D:
   serializedVersion: 4
