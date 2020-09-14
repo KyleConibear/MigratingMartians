@@ -69,6 +69,9 @@ namespace KyleConibear
 
         private void FollowLockedTarget()
         {
+            if (this.martian.isActiveAndEnabled == false)
+                this.SetState(State.Searching);
+
             Vector2 direction = this.martian.transform.position - this.transform.position;
             this.move.GlobalMove(direction.normalized);
         }

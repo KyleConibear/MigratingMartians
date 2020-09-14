@@ -20,7 +20,7 @@ namespace KyleConibear
 
         public static Action<Martian> On_MartianKilled;
 
-        [SerializeField] private int rewardPoints = 0;
+        [SerializeField] private int rewardPoints = 100;
         public int RewardPoints => this.rewardPoints;
 
         private Meter healthMeter = null;

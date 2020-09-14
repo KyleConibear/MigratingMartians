@@ -65,18 +65,27 @@ namespace KyleConibear
         private void Start()
         {
             this.martianSpawnArea.DrawBounds(this.debugLineColour, this.debugLineLife);
+            Martian.On_MartianKilled += this.MartianKilled;
             this.SpawnMartian();
         }
 
         private void SpawnMartian()
         {
             Martian martian = Instantiate<Martian>(this.martianPrefab, this.GetRandomSpawnPosition(), Quaternion.identity);
-            martian.transform.SetParent(this.martianContainer);
+            martian.transform.SetParent(this.martianContainer);            
         }
 
         private Vector2 GetRandomSpawnPosition()
         {
             return martianSpawnArea.GetRandomPositionWithBounds();
+        }
+
+        private void MartianKilled(Martian martian)
+        {
+            SaveData.score += martian.RewardPoints;
+            this.levelUI.UpdateScoreText();
+
+            this.SpawnMartian();
         }
     }
 }

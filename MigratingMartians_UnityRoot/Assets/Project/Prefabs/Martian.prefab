@@ -9912,7 +9912,7 @@ MonoBehaviour:
   isLogging: 1
   debugText: {fileID: 4871626225486254270}
   animator: {fileID: 6795214697938557850}
-  rewardPoints: 0
+  rewardPoints: 100
   nextPosition: {x: 0, y: 0}
   stopDistance: 2
   bodyAngle: 30
