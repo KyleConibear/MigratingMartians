@@ -11,11 +11,19 @@ namespace KyleConibear
 
         [SerializeField] private float turnSpeed = 1.0f;
 
-        [SerializeField] private Vector2 restrictRotation = new Vector2(0, 180);
+        [SerializeField] private Vector2 clampRotation = new Vector2(0, 180);
 
         private void LateUpdate()
         {
-            // this.ClampRotation();
+            this.ClampRotation();
+        }
+
+        private void ClampRotation()
+        {
+            Vector3 euler = transform.eulerAngles;
+            if (euler.z > 180) euler.z = euler.z - 360;
+            euler.z = Mathf.Clamp(euler.z, this.clampRotation.x, this.clampRotation.y);
+            transform.eulerAngles = euler;
         }
 
         public void LookAt(Vector2 target)
@@ -27,33 +35,23 @@ namespace KyleConibear
 
             if (angle < 0)
             {
-                if(target.x <= this.transform.position.x)
+                if (target.x <= this.transform.position.x)
                 {
-                    angle = this.restrictRotation.y;
+                    angle = this.clampRotation.y;
                 }
                 else
                 {
-                    angle = this.restrictRotation.x;
+                    angle = this.clampRotation.x;
                 }
             }
 
             this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0, 0, angle), turnSpeed * Time.deltaTime);
         }
 
-        private void ClampRotation()
+        public void RotateToAngle(float angle)
         {
-            Vector3 euler = this.transform.eulerAngles;
-
-            if (euler.z < this.restrictRotation.x)
-            {
-                euler.z = this.restrictRotation.x;
-            }
-            else if (euler.z > this.restrictRotation.y)
-            {
-                euler.z = this.restrictRotation.y;
-            }
-
-            this.transform.eulerAngles = euler;
+            Log(this.isLogging, Type.Message, $"angle: {angle}");
+            this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.Euler(0, 0, angle), turnSpeed * Time.deltaTime);
         }
     }
 }

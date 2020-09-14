@@ -20,11 +20,16 @@ namespace KyleConibear
         [Range(1, 500)]
         [SerializeField] private float force = 100.0f;
 
-        [SerializeField] private new Rigidbody2D rigidbody2D = null;
+        [SerializeField] private new Rigidbody2D rigidbody2D = null;        
 
         private void Awake()
         {
             this.rigidbody2D = this.GetComponent<Rigidbody2D>();
+        }
+
+        public Vector2 GetVelocity()
+        {
+            return this.rigidbody2D.velocity;
         }
 
         public void GlobalMove(Vector2 direction, float velocityMultiplier = 1.0f)
@@ -69,7 +74,7 @@ namespace KyleConibear
             direction *= this.velocity * velocityMultiplier;
 
             this.rigidbody2D.AddRelativeForce(direction);
-        }
+        } 
 
         public void ResetVelocity()
         {

@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 namespace KyleConibear
 {
@@ -14,6 +13,7 @@ namespace KyleConibear
     {
         [Header("Debugging")]
         public bool isLogging = false;
+        [SerializeField] private TMP_Text debugText = null;
 
         [Header("Components")]
         [SerializeField] private Animator animator = null;
@@ -25,19 +25,34 @@ namespace KyleConibear
 
         private Meter healthMeter = null;
 
-         private ClampTransform clampTransform = null;
+        private ClampTransform clampTransform = null;
 
         [SerializeField] private Vector2 nextPosition = Vector2.zero;
-        [Range(1,3)]
+        [Range(1, 3)]
         [SerializeField] private float stopDistance;
 
-        private MovePhysics2D physics = null;
+        private MovePhysics2D movePhysics = null;
 
+        [SerializeField] private float bodyAngle = 15.0f;
+        [SerializeField] private float leftJetAngle = 30.0f;
+        [SerializeField] private float rightJetAngle = 30.0f;
+        [SerializeField] private Rotate2D bodyRotation = null;
+        [SerializeField] private Rotate2D leftJetRotation = null;
+        [SerializeField] private Rotate2D rightJetRotation = null;
+        [SerializeField] private ParticleSystem leftJetPS = null;
+        [SerializeField] private ParticleSystem rightJetPS = null;
+        [Range(6,32)]
+        [SerializeField] private float psSpeedChange = 12;
+        [Range(1,12)]
+        [SerializeField] private Vector2 psSpeedMultiplierRange = new Vector2(1, 6);
+        private float defaultSpeed;
         private void Awake()
         {
             this.clampTransform = this.GetComponent<ClampTransform>();
-            this.physics = this.GetComponent<MovePhysics2D>();
+            this.movePhysics = this.GetComponent<MovePhysics2D>();
             this.healthMeter = this.GetComponent<Meter>();
+
+            this.defaultSpeed = this.psSpeedMultiplierRange.x + (this.psSpeedMultiplierRange.y - this.psSpeedMultiplierRange.x);
         }
 
         private void Start()
@@ -55,13 +70,19 @@ namespace KyleConibear
             }
         }
 
-        private void Update()
+        private void LateUpdate()
+        {
+            this.Rotate();
+            this.SetParticleSpeed();
+        }
+
+        private void FixedUpdate()
         {
             // If we our are out of range of our nextPosition
             if (Vector2.Distance((Vector2)this.transform.position, this.nextPosition) >= this.stopDistance)
             {
                 // Move towards nextPosition
-                this.physics.MoveToTarget(this.nextPosition);
+                this.movePhysics.AddForceTowardsTarget(this.nextPosition);
             }
             else
             {
@@ -86,9 +107,105 @@ namespace KyleConibear
         //}
 
         private void SetNextPosition()
+        {
+            this.nextPosition = this.clampTransform.bounds.GetRandomPositionWithBounds();
+            // Log(this.isLogging, this.name, Type.Message, $"nextPosition: {this.nextPosition}");
+        }
+
+        private void Rotate()
+        {
+            // Moving left
+            if (this.movePhysics.GetVelocity().x > 0)
+            {
+                this.leftJetRotation.RotateToAngle(-this.leftJetAngle);
+                this.rightJetRotation.RotateToAngle(-this.rightJetAngle);
+                this.bodyRotation.RotateToAngle(-this.bodyAngle);
+            }
+            // Moving right
+            else if (this.movePhysics.GetVelocity().x < 0)
+            {
+                this.leftJetRotation.RotateToAngle(this.leftJetAngle);
+                this.rightJetRotation.RotateToAngle(this.rightJetAngle);
+                this.bodyRotation.RotateToAngle(this.bodyAngle);
+            }
+        }
+
+        private void DebugText(string message)
+        {
+            this.debugText.text = message;
+        }
+
+        private void SetParticleSpeed()
+        {
+            // Moving Down
+            if (this.movePhysics.GetVelocity().y < Mathf.Epsilon)
+            {
+                // Moving left
+                if (this.movePhysics.GetVelocity().x < Mathf.Epsilon)
+                {
+                    this.DebugText("DL");
+                    this.IncreaseRightJetParticleSpeed();
+                    this.DecreaseLeftJetParticleSpeed();                    
+                }
+                // Moving right
+                else if (this.movePhysics.GetVelocity().x > Mathf.Epsilon)
+                {
+                    this.DebugText("DR");
+                    this.IncreaseLeftJetParticleSpeed();
+                    this.DecreaseRightJetParticleSpeed();
+                }
+            }
+            // Moving Up
+            else if (this.movePhysics.GetVelocity().y > Mathf.Epsilon)
+            {
+                // Moving left
+                if (this.movePhysics.GetVelocity().x < Mathf.Epsilon)
+                {
+                    this.DebugText("UL");
+                    this.IncreaseLeftJetParticleSpeed();
+                    this.IncreaseRightJetParticleSpeed();
+                }
+                // Moving right
+                else if (this.movePhysics.GetVelocity().x > Mathf.Epsilon)
+                {
+                    this.DebugText("UR");
+                    this.IncreaseLeftJetParticleSpeed();
+                    this.IncreaseRightJetParticleSpeed();
+                }
+            }
+        }
+
+
+        private void IncreaseLeftJetParticleSpeed()
         {            
-            this.nextPosition = this.clampTransform.bounds.GetRandomPositionWithBounds();            
-            Log(this.isLogging, this.name, Type.Message, $"nextPosition: {this.nextPosition}");
+            var leftJet = this.leftJetPS.main;
+            if (leftJet.startSpeedMultiplier >= this.psSpeedMultiplierRange.y)
+                return;
+            leftJet.startSpeedMultiplier = this.leftJetPS.main.startSpeedMultiplier + (this.psSpeedChange * Time.deltaTime);
+        }
+
+        private void DecreaseLeftJetParticleSpeed()
+        {
+            var leftJet = this.leftJetPS.main;
+            if (leftJet.startSpeedMultiplier <= this.psSpeedMultiplierRange.x)
+                return;
+            leftJet.startSpeedMultiplier = this.leftJetPS.main.startSpeedMultiplier - (this.psSpeedChange * Time.deltaTime);
+        }
+
+        private void IncreaseRightJetParticleSpeed()
+        {
+            var rightJet = this.rightJetPS.main;
+            if (rightJet.startSpeedMultiplier >= this.psSpeedMultiplierRange.y)
+                return;
+            rightJet.startSpeedMultiplier = this.rightJetPS.main.startSpeedMultiplier + (this.psSpeedChange * Time.deltaTime);
+        }
+
+        private void DecreaseRightJetParticleSpeed()
+        {
+            var rightJet = this.rightJetPS.main;
+            if (rightJet.startSpeedMultiplier <= this.psSpeedMultiplierRange.x)
+                return;
+            rightJet.startSpeedMultiplier = this.rightJetPS.main.startSpeedMultiplier - (this.psSpeedChange * Time.deltaTime);
         }
 
         private void Hit(uint damage, float collisionX)
